@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "bootstrap": "^5.0.0-beta1",
-    "hugo-bin": "^0.68.0"
+    "hugo-bin": "^0.68.0",
+    "shx": "^0.3.3"
   }
 }
