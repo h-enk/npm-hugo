@@ -1,0 +1,8 @@
+<head>
+  {{ $options := (dict "targetPath" "main.css" "includePaths" (slice "node_modules")) -}}
+  {{ $css := resources.Get "app.scss" | resources.ToCSS $options }}
+  {{ if hugo.IsProduction -}}
+    {{ $css = $css | minify | fingerprint | resources.PostCSS | resources.PostProcess -}}
+  {{ end -}}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
+</head>
